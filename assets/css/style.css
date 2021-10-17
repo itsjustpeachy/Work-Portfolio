@@ -201,7 +201,7 @@ a:link {
 /*to do change sidebar display on screens < 700px wide*/
 @media screen and (max-width: 1170px) {
     :root {
-        --margin: 0px 10px 10px 10px;
+        --margin: 0px 10px 10px 0px;
         --content-margin: 0px 10px 10px 30px;
     }
     #sidebar {
@@ -235,7 +235,7 @@ a:link {
         border-width: 2px;
     }
     .bio {
-        margin:0;
+        margin:0 0 0 30px;
     }
   }
 @media screen and (max-width:700px) {
