@@ -5,19 +5,20 @@
     --main-font: Courier, monospace;
     --border-radius: 2px;
     --border-style: dashed rgba(0, 0, 0, 0.705);
-    --margin: ;    
+    --margin: 0px 10px 10px 370px ;    
     --background-color: #fff5ec6b; 
     --title-color: #327094;
     --font-color: #fff5ec;
+    --content-margin: 0px 10px 10px 380px;
 }
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
     padding: 0;
     margin: 0;
     background-color: rgba(255, 255, 255, 0);
 }
 section {
-    margin: 0px 10px 10px 360px;
+    margin: var(--margin);
 }
 body {
     margin: 0 0 0 50px;
@@ -40,7 +41,7 @@ body {
     background-color: #fff5ec;
     overflow: hidden;
 }
-#sidebar div {
+#sidebar div { 
     text-align: center;
     margin-top: 30vh;
 }
@@ -71,7 +72,8 @@ body {
 
 /*works styling*/
 #works-title {
-    margin: 0px 10px 10px 380px;
+    padding-top: 10px;
+    margin: var(--margin);
     font-size: 30px;
     font-family:var(--title-font)
 }
@@ -79,7 +81,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 0px 10px 10px 360px;
+    margin: var(--content-margin);
 }
 .project-card {
     flex: 1 0 0;
@@ -89,15 +91,15 @@ body {
     z-index: 1;
     position: relative;
     min-width: 204px;
-    max-width: 204px;
-    max-height: 204px;
+    max-width: 354px;
+    max-height: 354px;
 }
 .initial-card {
     position: relative;
     display: inline-block;
     max-height: 354px;
     min-width: 354px;
-    margin:10px;
+    margin:2.5px;
 }
 .project-card p {
     display: none;
@@ -134,11 +136,12 @@ body {
 
 /*about me styling*/
 #about_Me_title {
-    margin: 10px 10px 10px 360px;
+    margin: var(--margin);
     font-size: 30px;
     font-family: var(--title-font);
 }
 .bio {
+    margin: 10px 10px 10px 30px;
     background-color: var(--background-color);
     font-family: var(--main-font);
     font-size: 30px;
@@ -152,14 +155,14 @@ body {
 
 /*contact me styling*/
 #contact_Me_title {
-    margin: 10px 10px 10px 360px;
+    margin: var(--margin);
     font-size: 35px;
     font-family: var(--title-font);
 }
 #contact_Me {
     background-color: var(--background-color);
     font-family: var(--main-font);
-    margin: 10px 10px 10px 360px;
+    margin: var(--content-margin);
     border: var(--border-style);
     border-radius: var(--border-radius);
     padding: 5px;
@@ -196,3 +199,72 @@ a:link {
 /*footer styling*/
 
 /*to do change sidebar display on screens < 700px wide*/
+@media screen and (max-width: 1170px) {
+    :root {
+        --margin: 0px 10px 10px 10px;
+        --content-margin: 0px 10px 10px 30px;
+    }
+    #sidebar {
+        position: relative;
+        width: 110%;
+        height: 100px;
+        margin: 0 0 0 -50px;
+        border:none;
+        border-bottom: var(--border-style);
+        overflow: hidden;
+    }
+    #sidebar div {
+        margin-top: 0;
+        padding: 20px;
+    }
+    #sidebar h1 {
+        padding: 10px;
+        display: inline;
+        float: left;
+    }
+    #sidebar a {
+        display: inline-block;
+        right: 50px;
+        padding: 15px;
+    }
+    .me-pic{
+        float: left;
+        width: 60px;
+        height: 60px;
+        display: inline;
+        border-width: 2px;
+    }
+    .bio {
+        margin:0;
+    }
+  }
+@media screen and (max-width:700px) {
+    #sidebar {
+        position: relative;
+        width: 110%;
+        height: 300px;
+        margin: 0 0 0 -50px;
+        border:none;
+        border-bottom: var(--border-style);
+        overflow: hidden;
+    }
+    #sidebar div {
+        margin-top: 0;
+        padding: 20px;
+        text-align: center;
+    }
+    #sidebar h1 {
+        padding: 10px;
+        margin: 0 80px 10px 20px;
+        display: inline;
+        text-align: center;
+    }
+    #sidebar a {
+        display: block;
+        right: 50px;
+        padding: 15px;
+    }
+    .contact {
+        display: block;
+    }
+}
